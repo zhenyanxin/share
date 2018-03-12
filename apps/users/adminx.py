@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import xadmin
-from .models import UserMust, UserComplete, UserSelectable
+from .models import UserMust, UserComplete, UserSelectable,VerifyCode
 from xadmin import views
 
 
@@ -34,6 +34,13 @@ class UserSelectableAdmin(object):
     list_filter = ['user_id', 'education', 'qq', 'wechat']
 
 
+class VerifyCodeAdmin(object):
+    list_display = ['code', 'mobile',  'add_time']
+    search_fields = ['code', 'mobile']
+    list_filter = ['code', 'mobile',  'add_time']
+
+
+xadmin.site.register(VerifyCode,VerifyCodeAdmin)
 xadmin.site.register(UserMust, UserMustAdmin)
 xadmin.site.register(UserComplete, UserCompleteAdmin)
 xadmin.site.register(UserSelectable, UserSelectableAdmin)

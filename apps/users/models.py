@@ -28,7 +28,7 @@ class UserComplete(models.Model):
     bank_number = models.CharField(max_length=30, default=u"", verbose_name=u"银行卡号")
     gender = models.CharField(max_length=6, choices=(("male", u"男"), ("female", "女")), default="female")
     address = models.CharField(max_length=100, default=u"")
-    image = models.ImageField(upload_to="media/image/users", default=u"", max_length=100, verbose_name="用户头像图片")
+    image = models.ImageField(upload_to="image/users", default=u"", max_length=100, verbose_name="用户头像图片")
 
     class Meta:
         verbose_name = "用户完善信息"
